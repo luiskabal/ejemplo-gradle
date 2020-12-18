@@ -7,7 +7,7 @@
 def call(){
 stage('Compile'){
 		env.TAREA='Compile'
-		bat './mvnw.cmd cleana compile -e'
+		bat './mvnw.cmd clean compile -e'
 		
 	}
 	 stage('Unit Test'){
