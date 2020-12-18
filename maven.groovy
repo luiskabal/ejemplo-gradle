@@ -6,25 +6,30 @@
 
 def call(){
 stage('Compile'){
-		bat './mvnw.cmd clean compile -e'
+		env.TAREA='Compile'
+		bat './mvnw.cmd cleana compile -e'
 		
 	}
 	 stage('Unit Test'){
+	 env.TAREA='Unit Test'
 		bat './mvnw.cmd clean test -e'
 		
 	}
 
 	 stage('Jar'){
+	 	 env.TAREA='Jar'
 		bat './mvnw.cmd clean package -e'
 		
 	}
-	stage('sonar'){
+	stage('Sonar'){
+		env.TAREA='Sonar'
 		def scannerHome = tool 'sonar';
 		withSonarQubeEnv('sonar') {
 			bat "${scannerHome}\\bin\\sonar-scanner -Dsonar.projectKey=ejemplo-gradle -Dsonar.java.binaries=build"
 		}
 	}
 	stage('Nexus Upload'){
+		env.TAREA='Nexus Upload'
 		nexusArtifactUploader(
 		nexusVersion: 'nexus3',
 		protocol: 'http',
