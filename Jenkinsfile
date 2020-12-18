@@ -14,10 +14,10 @@ pipeline{
 
    post {
         always {
-           slackSend channel: 'U01DK543PKN', color: 'good', message: "Ejecucion exitosa", teamDomain: 'divdevopsusach2020', tokenCredentialId: 'slack-Token'
+           slackSend channel: 'U01DK543PKN', color: 'good', message: "Ejecucion exitosa", teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'slack-Token'
         }
         failure {
-			slackSend channel: 'U01DK543PKN', color: 'danger', message: "Ejecucion fallida", teamDomain: 'divdevopsusach2020', tokenCredentialId: 'slack-Token'
+			slackSend channel: 'U01DK543PKN', color: 'danger', message: "Ejecucion fallida", teamDomain: 'dipdevopsusach2020', tokenCredentialId: 'slack-Token'
         }
     }
 }
