@@ -15,10 +15,10 @@ pipeline{
 
    post {
         always {
-           slackSend channel: 'U01DK543PKN', color: 'good', message: ['Luis Varas Q'][$JOB_NAME][params.buildtool]'Ejecucion exitosa', teamDomain: 'devopsusach2020', tokenCredentialId: 'slack-Token'
+           slackSend channel: 'U01DK543PKN', color: 'good', message: "['Luis Varas Q'][$JOB_NAME][params.buildtool]'Ejecucion exitosa'", teamDomain: 'devopsusach2020', tokenCredentialId: 'slack-Token'
         }
         failure {
-			slackSend channel: 'U01DK543PKN', color: 'danger', message: ['Luis Varas Q'][$JOB_NAME][params.buildtool]'Ejecucion fallida', teamDomain: 'devopsusach2020', tokenCredentialId: 'slack-Token'
+			slackSend channel: 'U01DK543PKN', color: 'danger', message: "['Luis Varas Q'][$JOB_NAME][params.buildtool]'Ejecucion fallida'", teamDomain: 'devopsusach2020', tokenCredentialId: 'slack-Token'
         }
     }
 }
