@@ -4,10 +4,8 @@ pipeline{
 	stages{
 			stage('Pipeline'){
 				steps{
-					script{
-					def pipe=load"${params.buildtool}.groovy"
-					pipe.call()	
-					}
+				echo 'aca'
+				
 				}
 				
 			}
