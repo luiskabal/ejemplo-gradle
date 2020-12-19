@@ -7,8 +7,7 @@ pipeline{
 			stage('Pipeline'){
 				steps{
 					script{
-					def pipe=load"${params.buildtool}.groovy"
-					pipe.call()	
+					"${params.buildtool}".call()	
 					}
 				}
 				
